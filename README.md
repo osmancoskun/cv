@@ -1,3 +1,5 @@
+# This templates is has my informations that I used in my CV. You can edit and use however you want to use.
+
 # autoCV
 
 A clean CV template in LaTeX along with a GitHub action that complies the `*.tex` file and publishes a new PDF version when new changes are pushed to the repo
