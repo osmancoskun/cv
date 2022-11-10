@@ -1,0 +1,218 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage[inline]{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{\textbf{Osman Coskun}} \\[7.5pt]
+\href{https://github.com/osmancoskun}{\raisebox{-0.05\height}\faGithub\ osmancoskun} \ $|$ \ 
+\href{https://linkedin.com/in/osmancoskun95}{\raisebox{-0.05\height}\faLinkedin\ osmancoskun95} \ $|$ \ 
+\href{https://osmancoskun.com}{\raisebox{-0.05\height}\faGlobe \ osmancoskun.com} \ $|$ \ 
+\href{mailto:me@osmancoskun.com}{\raisebox{-0.05\height}\faEnvelope \ me@osmancoskun.com} \ 
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{Summary}
+A super curious software engineer currently focused on frontend web development
+%Experience
+\section{Work Experience}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Arniva Software [FULLSTACK DEVELOPER]} & \hfill Dec 2021 - Nov 2022 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{I worked as fullstack developer and developed 2 projects. \newline\textbf{Tourism Application} with admin panel, company panel and customer panel. Generally admin panel is for system administrators where authorized users can view, add, edit, delete and get general informations about whole system; company panel is for companies where authorized users can add, edit, delete companies, incomes and support customers; customer application is for end users where users can book, get support, view tours and services that companies offers. 
+\newline \textbf{Used Technologies: 
+\begin{itemize*}
+    \item Svelte
+    \item Framework7
+    \item Bootstrap 5
+    \item Nodejs
+    \item Express
+    \item MySQL
+    \item Socket.io
+\end{itemize*}}
+\newline
+\newline
+\textbf{Licence Application} is for controlling licences that has been given to companies and buisness partners. In this application admin can control all licences and sub modules.
+\newline \textbf{Used Technologies: 
+\begin{itemize*}
+    \item Svelte
+    \item Bootstrap 5
+    \item Nodejs
+    \item Express
+    \item PostgreSQL
+\end{itemize*}}
+}
+\end{tabularx}
+
+%Projects
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Svelte To-Do} & \hfill \href{https://todo.osmancoskun.com/}{Demo} \href{https://github.com/osmancoskun/svelte-todo-localstorage}{Github} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Svelte Todo application. There are 3 types of todos. Pending, Done and Deleted. You can customize with colors. All informations are stored in \textbf{Localstorage}
+\newline \textbf{Used Technologies: 
+\begin{itemize*}
+    \item Svelte
+    \item HTML5
+    \item CSS3
+    \item Svelte-Toast
+\end{itemize*}}}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Mergin Wallpaper} & \hfill \href{https://github.com/osmancoskun/mergin-wallpaper}{Github} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Desktop wallpaper changing application. With this application you can preview and set wallpaper, random in one of these and download daily \textbf{BING} wallpaper. \textbf{Gnome Desktop Environment} supported with Gnome notifications}
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2022 Bachelor's Degree (Software Engineering) at \textbf{Firat University} \hfill (GPA: 2.4/4.0)
+\end{tabularx}
+\section{Freelance Jobs}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+\textbf{Currency Application}\\
+User can add their daily selling / buying exchanges and their rates in specific hours.\\ 
+\textit{Used Technologies: 
+\begin{itemize*}
+    \item Svelte
+    \item Attractions
+    \item Firebase
+\end{itemize*}}
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	FREELANCES JOBS
+%----------------------------------------------------------------------------------------
+
+\textbf{Company Application}\\
+An authorized user can view other owned company's incomes and expenses by selecting company name at the login screen. After that user can add, edit, delete incomes or expenses and view them in charts in between selected dates and download in PDF or Excel formats.\\ 
+\textit{Used Technologies: 
+\begin{itemize*}
+    \item Vuejs v2
+    \item Buefy
+    \item Firebase
+\end{itemize*}}
+
+\vfill
+\end{document}
